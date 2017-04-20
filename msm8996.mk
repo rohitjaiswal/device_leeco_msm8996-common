@@ -116,9 +116,12 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
+    Snap 
+
+# Shims
+PRODUCT_PACKAGES += \
     libcamera_shim \
-    libstlport
+    libshims_camera
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -241,6 +244,14 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8996
+
+# LePref settigs modules
+PRODUCT_PACKAGES += \
+    LePref
+
+# LePref Files
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/leeco/msm8996-common/lepref/files,/system/etc)
 
 # Wifi
 PRODUCT_PACKAGES += \
