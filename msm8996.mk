@@ -119,7 +119,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap 
+    Snap \
+    libstlport
 
 # Shims
 PRODUCT_PACKAGES += \
@@ -238,10 +239,6 @@ PRODUCT_PACKAGES += \
     rmnetcli \
     libxml2 \
     libprotobuf-cpp-full
-
-# stlport required for Camera blobs
-PRODUCT_PACKAGES += \
-    libstlport
 
 # Sensors
 PRODUCT_PACKAGES += \
