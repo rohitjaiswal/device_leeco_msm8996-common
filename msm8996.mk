@@ -79,13 +79,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/atmel_ts_key.kl:system/usr/keylayout/atmel_ts_key.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/keylayout/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl
+    $(LOCAL_PATH)/keylayout/qpnp_pon.kl:system/usr/keylayout/qpnp_pon.kl \
+    $(LOCAL_PATH)/keylayout/Generic.kl:system/usr/keylayout/Generic.kl
+
+
 
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=true
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.sys.sdcardfs=true
 
 # Alipay / WeChat
 PRODUCT_BOOT_JARS += \
@@ -116,12 +119,14 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap 
+    Snap \
+    libstlport
 
 # Shims
 PRODUCT_PACKAGES += \
     libcamera_shim \
-    libshims_camera
+    libshims_camera \
+    libshims_ims
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
@@ -157,7 +162,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprintd \
     fingerprint.msm8996
-
 # Gello
 PRODUCT_PACKAGES += \
     Gello
@@ -236,10 +240,6 @@ PRODUCT_PACKAGES += \
     rmnetcli \
     libxml2 \
     libprotobuf-cpp-full
-
-# stlport required for Camera blobs
-PRODUCT_PACKAGES += \
-    libstlport
 
 # Sensors
 PRODUCT_PACKAGES += \
