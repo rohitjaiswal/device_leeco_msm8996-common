@@ -166,8 +166,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.net.doxlat=true \
     persist.oem.dump=0 \
-    persist.radio.hw_mbn_update=0 \
-    persist.radio.sw_mbn_update=0 \
+    persist.data.iwlan.enable=true \
+    persist.radio.calls.on.ims=true \
+    persist.radio.hw_mbn_update=1 \
+    persist.radio.sw_mbn_openmkt=1 \
+    persist.radio.sw_mbn_update=1 \
+    persist.radio.sw_mbn_volte=1 \
+    persist.radio.start_ota_daemon=1 \
+    persist.volte_enalbed_by_hw=1 \
     persist.radio.start_ota_daemon=1
 
 #default SAR mode 0:off/1:on
