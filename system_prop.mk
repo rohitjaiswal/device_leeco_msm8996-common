@@ -15,10 +15,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.qcom_parser=4194303 \
     persist.mm.enable.prefetch=true
 
-# Enable AAC 5.1 output
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.aac_51_output_enabled=true
-
 # Additional i/p buffer in case of encoder DCVS
 PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.dcvs.extra-buff-count=2
@@ -43,14 +39,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.video=true \
     audio.offload.pcm.16bit.enable=true \
     audio.offload.pcm.24bit.enable=true \
-    audio.offload.track.enable=false \
+    audio.offload.track.enable=true \
     audio.deep_buffer.media=true \
     use.voice.path.for.pcm.voip=true \
     audio.offload.multiaac.enable=true \
     audio.offload.gapless.enabled=true \
     audio.safx.pbe.enabled=true \
     audio.parser.ip.buffer.size=262144 \
-    audio.dolby.ds2.enabled=false \
+    audio.dolby.ds2.enabled=true \
     audio.dolby.ds2.hardbypass=false \
     audio.offload.passthrough=false \
     audio.offload.multiple.enabled=true \
@@ -153,12 +149,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_1="" \
     persist.rild.nitz_short_ons_2="" \
     persist.rild.nitz_short_ons_3="" \
-    ril.subscription.types=NV,RUIM \
     DEVICE_PROVISIONED=1 \
+    persist.radio.multisim.config=dsds \
     persist.volte_enalbed_by_hw=1 \
+    persist.multisim.config=dsds \
+    ro.telephony.default_network=22,22 \
     persist.radio.data_ltd_sys_ind=1 \
-    ro.telephony.default_network=10,10 \
-    telephony.lteOnGsmDevice=1 \
     ro.telephony.call_ring.multiple=false \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.custom_ecc=1 \
@@ -166,28 +162,29 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0 \
     persist.net.doxlat=true \
     persist.oem.dump=0 \
-    persist.data.iwlan.enable=true \
-    persist.radio.calls.on.ims=true \
-    persist.radio.hw_mbn_update=1 \
-    persist.radio.sw_mbn_openmkt=1 \
-    persist.radio.sw_mbn_update=1 \
-    persist.radio.sw_mbn_volte=1 \
+    persist.radio.hw_mbn_update=0 \
+    persist.radio.sw_mbn_update=0 \
     persist.radio.start_ota_daemon=1 \
-    persist.volte_enalbed_by_hw=1 \
-    persist.radio.start_ota_daemon=1
+    ro.config.le_hardware_version=HW_1.0.0
+
+#ril.subscription.types=NV,RUIM
 
 #default SAR mode 0:off/1:on
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.sar_mode=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.cs_srv_type=0 \
+    persist.radio.calls.on.ims=1 \
+    persist.radio.jbims=true \
     persist.radio.csvt.enabled=false \
     persist.radio.rat_on=combine \
     persist.radio.mt_sms_ack=20 \
     persist.radio.ignore_dom_time=5 \
     persist.radio.force_on_dc=true \
     persist.radio.flexmap_type=none \
-    persist.radio.facnotsup_as_nonw=1
+    persist.radio.facnotsup_as_nonw=1 \
+    persist.radio.atfwd.start=false
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -216,3 +213,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Fastcharge
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.le_fast_chrg_enable=1
+
+# Google Assistant
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opa.eligible_device=true
+
+# WiFi Calling
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.iwlan.enable=true
+
+# IMS
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.vt_avail_ovr=1 \
+    persist.radio.NO_STAPA=1 \
+    persist.radio.VT_HYBRID_ENABLE=1 \
+    net.lte.volte_call_capable=true \
+    persist.rcs.supported=1 \
+    persist.radio.domain.ps=false \
+    persist.radio.VT_ENABLE=1 \
+    persist.radio.REVERSE_QMI=0 \
+    persist.radio.ROTATION_ENABLE=1 \

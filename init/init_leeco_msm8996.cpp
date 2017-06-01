@@ -145,33 +145,29 @@ void vendor_load_properties() {
         }
     }
 
-    if (isLEX720)
-    {
-        // This is LEX720
-        property_set("ro.product.model", "LEX720");
-        // Dual SIM
-        property_set("persist.radio.multisim.config", "dsds");
-    }
-    else if (isLEX727)
-    {
-        // This is LEX727
-        property_set("ro.product.model", "LEX727");
-        // Single SIM
-        property_set("persist.radio.multisim.config", "NA");
-    }
-    else if (isLEX820)
+    if (isLEX820)
     {
         // This is LEX820
         property_set("ro.product.model", "LEX820");
+        //property_set("persist.data.iwlan.enable", "false");
         // Dual SIM
-        property_set("persist.radio.multisim.config", "dsds");
+        //property_set("persist.radio.multisim.config", "dsds");
+        // Disable VoLTE
+        //property_set("persist.radio.cs_srv_type", "1");
+        //property_set("persist.radio.calls.on.ims", "0");
+        //property_set("persist.radio.jbims", "0");
     }
     else if (isLEX829)
     {
         // This is LEX829
         property_set("ro.product.model", "LEX829");
+        //property_set("persist.data.iwlan.enable", "true");
         // Dual SIM
-        property_set("persist.radio.multisim.config", "dsds");
+        //property_set("persist.radio.multisim.config", "dsds");
+        // Enable VoLTE
+        //property_set("persist.radio.cs_srv_type", "0");
+        //property_set("persist.radio.calls.on.ims", "true");
+        //property_set("persist.radio.jbims", "true");
     }
     else
     {
@@ -180,12 +176,6 @@ void vendor_load_properties() {
 
     // Common properties
     property_set("persist.radio.ignore_dom_time", "5");
-    // Enable WiFiCalling
-    property_set("persist.data.iwlan.enable", "true");
-    // Enable VoLTE
-    property_set("persist.radio.cs_srv_type", "0");
-    property_set("persist.radio.calls.on.ims", "true");
-    property_set("persist.radio.jbims", "true");
 
     init_alarm_boot_properties();
 }
