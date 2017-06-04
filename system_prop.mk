@@ -134,7 +134,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst="/dev/block/bootdevice/by-name/frp" \
+    #ro.frp.pst="/dev/block/bootdevice/by-name/frp" \ (Developer Option setting Crashed if it is enabled)
     drm.service.enabled=true
 
 # RIL

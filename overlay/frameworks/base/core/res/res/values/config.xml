@@ -19,6 +19,31 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- integer name="config_deviceHardwareWakeKeys">64</integer --> <!-- integer name="config_deviceHardwareWakeKeys">64</integer -->
+ 
+ <!-- Proximity check on screen on -->
+    <bool name="config_proximityCheckOnWake">true</bool>
+
+    <!-- Proximity check timeout -->
+    <integer name="config_proximityCheckTimeout">100</integer>
+
+    <!-- Proximity check on screen on default -->
+    <!-- bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool -->
+
+    <!-- Do the battery/notification LEDs support pulsing?
+         Used to decide if we show pulse settings -->
+    <bool name="config_ledCanPulse">true</bool>
+
+    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">true</bool>
+
+    <!-- Default value for led color when battery is medium charged
+         We set this to orange as low is red and charged is green -->
+    <!-- integer name="config_notificationsBatteryMediumARGB">0xFF0000FF</integer -->
+
+    <!-- bool name="config_fingerprintRemoveClientOnCancel">true</bool -->
+   
+
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
